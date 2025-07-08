@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">🌿 Environmental Monitoring Dashboard</h2>
+
+    <div class="mb-3">
+        <a href="{{ url_for('env_bp.export_environment_csv') }}" class="btn btn-outline-primary">Download CSV</a>
+        <a href="{{ url_for('env_bp.export_environment_pdf') }}" class="btn btn-outline-danger">Download PDF</a>
+    </div>
+
+    <canvas id="envChart" height="100"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labelsEnv = { labels_js , tojson };
+    const airData = { air_js , tojson };
+    const waterData = { water_js , tojson };
+    const noiseData = { noise_js , tojson };
+
+    const ctx = document.getElementById('envChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labelsEnv,
+            datasets: [
+                {
+                    label: 'Air Quality',
+                    data: airData,
+                    borderColor: '#007bff',
+                    backgroundColor: 'rgba(0,123,255,0.1)',
+                    fill: true,
+                    tension: 0.4
+                },
+                {
+                    label: 'Water Quality',
+                    data: waterData,
+                    borderColor: '#28a745',
+                    backgroundColor: 'rgba(40,167,69,0.1)',
+                    fill: true,
+                    tension: 0.4
+                },
+                {
+                    label: 'Noise Level',
+                    data: noiseData,
+                    borderColor: '#dc3545',
+                    backgroundColor: 'rgba(220,53,69,0.1)',
+                    fill: true,
+                    tension: 0.4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' }
+            },
+            interaction: {
+                mode: 'index',
+                intersect: false
+            },
+            scales: {
+                x: {
+                    title: { display: true, text: 'Timestamp' }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: 'Measurement Level' }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

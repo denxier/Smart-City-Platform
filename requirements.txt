@@ -1,0 +1,16 @@
+Flask
+Flask-WTF
+Flask-Bootstrap
+Flask-SQLAlchemy
+Flask-Migrate
+email-validator
+Werkzeug
+WTForms
+pandas
+WeasyPrint         # for PDF export (alternative: ReportLab)
+twilio             # for SMS alerts
+python-dotenv      # for loading environment variables
+Flask-Mail         # if using email alerts
+uuid               # used internally, part of standard lib (included)
+gunicorn           # for deployment
+python-dateutil    # advanced date parsing

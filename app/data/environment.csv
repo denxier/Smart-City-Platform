@@ -1,0 +1,4 @@
+timestamp,air_quality,water_quality,noise_level
+2025-06-25 10:00,42,88,65
+2025-06-25 11:00,45,85,63
+...

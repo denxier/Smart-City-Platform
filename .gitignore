@@ -1,0 +1,29 @@
+# Python + Flask GitIgnore
+
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+ENV/
+env.bak/
+
+# SQLite database
+*.sqlite3
+
+# Secrets
+.env
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test cache
+.pytest_cache/
+.mypy_cache/

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="landing-section text-center fade-in">
+  <h1 class="display-4 main-heading"><i class="fas fa-city me-2"></i>Smart City Integrated Platform</h1>
+  <p class="lead subtitle">A unified digital ecosystem for smarter living</p>
+
+  <div class="grid-container mt-4">
+    <div class="glass-card zoom-in delay-1">
+      <i class="fas fa-tools icon-lg text-primary"></i>
+      <h5>Civic Issue Reporting</h5>
+      <a href="/civic" class="btn btn-outline-primary mt-2">Report Now</a>
+    </div>
+    <div class="glass-card zoom-in delay-2">
+      <i class="fas fa-seedling icon-lg text-success"></i>
+      <h5>Environmental Dashboard</h5>
+      <a href="/environment" class="btn btn-outline-success mt-2">View Stats</a>
+    </div>
+    <div class="glass-card zoom-in delay-3">
+      <i class="fas fa-bullhorn icon-lg text-danger"></i>
+      <h5>Public Alerts & Health</h5>
+      <a href="/alerts" class="btn btn-outline-danger mt-2">Get Alerts</a>
+    </div>
+    <div class="glass-card zoom-in delay-4">
+      <i class="fas fa-hands-helping icon-lg text-info"></i>
+      <h5>Resource & Volunteer</h5>
+      <a href="/resources" class="btn btn-outline-info mt-2">Contribute</a>
+    </div>
+    <div class="glass-card zoom-in delay-5">
+      <i class="fas fa-map-marked-alt icon-lg text-dark"></i>
+      <h5>Directory & Events</h5>
+      <a href="/directory" class="btn btn-outline-dark mt-2">Browse</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

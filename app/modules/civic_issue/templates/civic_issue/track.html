@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">🔍 Track Your Report</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">{{ form.issue_id.label }} {{ form.issue_id(class="form-control") }}</div>
+        {{ form.submit(class="btn btn-info") }}
+    </form>
+
+    {% if issue %}
+    <hr>
+    <h4>Details for Issue ID: {{ issue.issue_id }}</h4>
+    <ul>
+        <li><strong>Title:</strong> {{ issue.title }}</li>
+        <li><strong>Status:</strong> {{ issue.status }}</li>
+        <li><strong>Location:</strong> {{ issue.location }}</li>
+        <li><strong>Description:</strong> {{ issue.description }}</li>
+        {% if issue.image_filename %}
+            <li><img src="{{ url_for('static', filename='uploads/' + issue.image_filename) }}" class="img-fluid mt-3" style="max-width: 300px;"></li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}
